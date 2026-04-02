@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}About | FoodBlog{% endblock %}
+
+{% block content %}
+
+    <section class="about-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 p-0">
+                    <img src="{% static 'images/about.jpg' %}"
+                         alt="About image"
+                         class="about-img">
+                </div>
+
+                <div class="col-md-6 about-content">
+                    <div class="about-box mb-4">
+                        <small class="about-small">Our Story</small>
+                        <h1>Get to know us</h1>
+                    </div>
+
+                    <div class="about-card">
+                        <h4>Our vision</h4>
+                        <p>
+                             At FoodFeed, we are passionate about sharing mouthwatering
+                            plant-based recipes that not only nourish the body but also
+                            tantalize the taste buds...
+                        </p>
+
+                        <h4 class="mt-4">
+                            Our values
+                        </h4>
+
+                        <p>
+                            We believe in fresh ingredients, mindful cooking,
+                            and making healthy food exciting and accessible.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <section class="mission-header text-center">
+                <div class="container">
+                    <p class="mission-small">
+                        Mission & Goals
+                    </p>
+                    <h1 class="mission-title"> 
+                        Empowering Through <br> Food Choices
+                    </h1>
+                </div>
+            </section>
+
+            <section class="goals-section">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6 goals-left">
+
+                            <div class="goal-card">
+                                <div class="goal-number">
+                                    01
+                                </div>
+                                <div>
+                                    <h3>Promoting Awareness</h3>
+                                </div>
+                                <p>
+                                    Our primary goal is to raise awareness about the
+                                    benefits of plant-based eating and provide accessible
+                                    resources for individuals looking to adopt a vegan lifestyle.
+                                </p>
+                            </div>
+
+                            <div class="goal-card">
+                                <div class="goal-number">02</div>
+                                <div>
+                                    <h3>Inspiring Change</h3>
+                                    <p>
+                                        We aim to inspire positive change by showcasing
+                                        the diversity and deliciousness of vegan cuisine,
+                                        encouraging others to embrace a plant-based diet.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="goal-card">
+                                <div class="goal-number">03</div>
+                                <div>
+                                    <h3>Community Engagement</h3>
+                                    <p>
+                                        Engaging with our community is essential to us. We actively seek to build a supportive and inclusive vegan community where individuals can connect, share knowledge, and inspire each other.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="goal-card">
+                                <div class="goal-number">04</div>
+                                <div>
+                                    <h3>Sustainability Focus</h3>
+                                    <p>
+                                        Sustainability is at the core of our mission. We are dedicated to promoting eco-friendly practices and advocating for a more sustainable food system that benefits both people and the planet.
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6 p-0">
+                            <div class="sticky-image">
+                                <img src="{% static 'images/about1.jpg'%}" alt="food image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+{% endblock %}

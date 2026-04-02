@@ -1,0 +1,53 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/articles.css'%}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-9">
+
+            <div class="blog-detail-card p-4 p-md-5 shadow-sm">
+                <p class="text-muted small">
+                  {{ article.author }} | {{ article.date|date:"M d,Y" }}
+                </p>
+
+                <h1 class="blog-detail-title mb-4">
+                    {{ article.title }}
+                </h1>
+
+                {% if article.image %}
+                    <img src="{{ article.image.url}}"
+                         class="img-fluid rounded"
+                         alt="{{ article.title }}">
+                {% endif %}
+
+                <p class="article-price">Rs. {{ article.amount }}</p>
+
+                <div class="blog-body">
+                    {{ article.body|linebreaks }}
+                </div>
+
+                <div class="mt-5">
+                    <a href="{% url 'article_list' %}"
+                        class="btn btn-outline-dark">
+                        Back to Blog
+                    </a>
+
+                    <a href="{% url 'add_to_cart' article.id %}" class="btn btn-theme btn-outline-dark">
+                        Add to Cart
+                    </a>
+                    <a href="{% url 'buy_now' article.id %}" class="btn btn-theme btn-outline-dark">
+                        Buy Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

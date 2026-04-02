@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}Home | FoodBlog{% endblock %}
+
+{% block content %}
+
+    <section class="hero-section">
+        <div class="container">
+            <div class="row alig-items-center">
+                <div class="col-md-6 hero-content">
+                    <h1 class="slide-down display-4 fw-bold">
+                        Explore the world of food.
+                    </h1>
+
+                    <p class="slide-down lead mt-3">
+                        Discover amazing recipes,travel stories, and culinary adventures.
+                    </p>
+
+                    <a href="{% url 'article_list'%}" class="slide-down btn custom-btn btn-lg mt-3">
+                        Read the Blog
+                    </a>
+                </div>
+
+                <div class="col-md-6">
+                    <img src="{% static 'images/salad header.jpg' %}"
+                    class="slide-down img-fluid hero-img rounded shadow"
+                    alt="Food image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+  
+    <section class="mission-section py-5">
+        <div class="container">
+            <div class="mission-box">
+                <div class="row align-items-center">
+
+                    <div class="col-md-6 mb-4 mb-md-0">
+                        <img src="{% static 'images/mission.jpg' %}"
+                             alt="Mission Image"
+                             class="img-fluid mission-img">
+                    </div>
+
+                    <div class="col-md-6">
+                        <h2>
+                            MISSION AND VISION
+                        </h2>
+
+                        <p>
+                             At FoodFeed, we are dedicated to sharing the joy of plant-based eating
+                            through our flavorful and wholesome recipes. Our mission is to inspire
+                            individuals to embrace a healthier lifestyle by providing easy-to-follow
+                            recipes that prioritize taste and nutrition. Join us on this culinary
+                            adventure and let's create a healthier world together.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script> -->
+
+    {% endblock %}

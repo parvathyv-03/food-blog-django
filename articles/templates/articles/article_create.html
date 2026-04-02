@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="create-container">
+    <div class="create-box">
+        <h2 class="create-title">
+            Create New Article
+        </h2>
+
+        <form class="site-form" action="{% url 'create' %}" method="post" enctype="multipart/form-data">
+
+            {% csrf_token %}
+
+            <div>
+                {{ form.as_p }}
+            </div>
+
+            <input class="create-btn" type="submit" value="Create Article">
+        </form>
+    </div>
+</div>
+
+{% endblock %}

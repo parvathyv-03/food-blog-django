@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block extra_css %}
+
+<link rel="stylesheet" href="{% static 'css/articles.css'%}">
+
+{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+    <div class="text-center mb-5">
+        <h1 class="fw-bold theme-heading">All Posts</h1>
+    </div>
+
+    {% for article in articles %}
+
+    <div class="card blog-card mb-5 border-0 shadow-sm">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <div class="blog-image">
+                    {% if article.image %}
+                        <img src="{{ article.image.url }}"
+                            class="img-fluid rounded-start"
+                            alt="{{ article.title }}">
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="col-md-7">
+                <div class="card-body p-4">
+                    <p class="text-muted small mb-2">
+                        {{ article.author }} | {{ article.date|date:"M d,Y"}}
+                    </p>
+
+                    <h2 class="blog-title">
+                        <a href="{% url 'article_detail' article.slug %}">
+                            {{ article.title }}
+                        </a>
+                    </h2>
+
+                    <p class="blog-snippet">
+                        {{ article.snippet }}
+                    </p>
+
+                    <p class="article-price">
+                            Rs.{{ article.amount }}
+                    </p>
+
+                    <a href="{% url 'article_detail' article.slug %}"
+                        class="btn btn-theme mt-3">
+                        Read More
+                    </a>
+
+                    <a href="{% url 'add_to_cart' article.id %}" class="btn btn-theme mt-3">
+                        Add to Cart
+                    </a>
+
+                    <a href="{% url 'buy_now' article.id %}" class="btn btn-theme mt-3">
+                        Buy Now
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    {% empty %}
+        <p>No articles available.</p>
+    {% endfor %}
+</div>
+
+{% endblock %}

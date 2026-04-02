@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2 style="text-align:center;margin: 20px;">Your cart</h2>
+
+<div class="cart-container">
+{% for item in cart_items %}
+
+<div class="cart-card">
+
+    <img src="{{ item.article.image.url}}" width="150">
+
+    <div class="quantity-controls">
+            <a href="{% url 'decrease_quantity' item.id%}">
+                <button>-</button>
+            </a>
+
+            <span>{{ item.quantity }} </span>
+
+            <a href="{% url 'increase_quantity' item.id %}"> 
+                <button>+</button>
+            </a>
+    </div>
+
+    <div class="cart-details">
+        <h3 style="margin-top: 20px;">{{ item.article.title }}</h3>
+
+        <p>Price : Rs. {{ item.article.amount }}</p>
+
+        <a href="{% url 'remove_item' item.id %}">
+            <button class="remove-btn">Remove</button>
+        </a>
+    </div>
+</div>
+
+{% empty %}
+
+<p style="text-align: center;">Your Cart is empty.</p>
+
+{% endfor %}
+</div>
+
+<h3 style="text-align: center;margin-top: 30px;">
+    Total Cart Amount : Rs. {{ total }}
+</h3>
+
+<div class="buy-btn-container">
+    {% if cart_items %}
+        <a href="{% url 'checkout' %}">
+            <button class="buy-btn">Buy Now</button>
+        </a>
+    {% else %}
+        <a href="{% url 'article_list' %}">
+            <button class="buy-btn">Back to Blog</button>
+        </a>
+    {% endif %}
+</div>
+
+{% endblock %}
