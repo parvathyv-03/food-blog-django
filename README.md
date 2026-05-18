@@ -32,4 +32,8 @@ mysite
 
 This project was built as part of learning python django.
 
+## Note
+
+This project was created as part of exploring the Django framework.
+
 
