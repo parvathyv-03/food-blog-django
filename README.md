@@ -6,7 +6,7 @@ A full-stack web application built using Django that allows users to explore and
 
 * User authentication ( Login & Signup )
 * Create a new blog posts
-* View all food artiles
+* View all food articles
 * Buy Now and Add to Cart options in each blog post to enable purchasing(implemented as part of learning payment)
 * Responsive UI using HTML,CSS,Bootstrap
 
